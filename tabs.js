@@ -1,5 +1,6 @@
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { StyleSheet, Text, View, Image, TouchableOpacity } from 'react-native';
+import MyMap from './screens/MapScreen';
 
 const Tab = createBottomTabNavigator();
 
@@ -72,7 +73,7 @@ const Tabs = () =>{
                 </View>
             )
            }}></Tab.Screen>
-           <Tab.Screen name="Map" component={ScreenTwo} options={{
+           <Tab.Screen name="Map" component={MyMap} options={{
             headerShown: false,
             tabBarIcon: ({focused}) => (
                 <View style={{

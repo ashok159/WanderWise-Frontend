@@ -5,6 +5,7 @@ import Home from './screens/home';
 import Register from './screens/register';
 import Login from './screens/login';
 import MainPage from './mainpage';
+import MyMap from './screens/MapScreen';
 
 const Stack = createStackNavigator();
 
@@ -31,6 +32,11 @@ export default function App() {
           name="MainPage"
           component={MainPage} 
           options={{ headerShown: false }} 
+        />
+        <Stack.Screen
+          name = "MapScreen"
+          component={MyMap}
+          options={{headerShown: false}}
         />
       </Stack.Navigator>
     </NavigationContainer>
