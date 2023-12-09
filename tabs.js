@@ -1,6 +1,8 @@
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { StyleSheet, Text, View, Image, TouchableOpacity } from 'react-native';
 import MyMap from './screens/MapScreen';
+import HomeScreen from './screens/HomeScreen';
+import Home from './screens/home';
 
 const Tab = createBottomTabNavigator();
 
@@ -52,7 +54,7 @@ const Tabs = () =>{
                 }
             }}
         >
-           <Tab.Screen name="Home" component={ScreenOne} options={{
+           <Tab.Screen name="Home" component={HomeScreen} options={{
             headerShown: false,
             tabBarIcon: ({focused}) => (
                 <View style={{
