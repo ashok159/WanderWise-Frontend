@@ -425,6 +425,11 @@ function MyCalendar() {
 
   return (
     <TouchableWithoutFeedback onPress={Keyboard.dismiss} accessible={false}>
+    <ScrollView showsVerticalScrollIndicator={false} style={{flex: 1}}
+        refreshControl={
+          <RefreshControl refreshing={refreshing} onRefresh={onRefresh} />
+        }
+      >
     <View style={styles.container}>
       <TouchableOpacity
         style={styles.backButton}
@@ -437,11 +442,7 @@ function MyCalendar() {
         />
       </TouchableOpacity>
 
-      <ScrollView
-        refreshControl={
-          <RefreshControl refreshing={refreshing} onRefresh={onRefresh} />
-        }
-      >
+      
         <Calendar
           style={styles.calendar}
           theme={customTheme}
@@ -478,46 +479,13 @@ function MyCalendar() {
             </View>
 
             <View style={styles.inputContainer}>
-              <GooglePlacesAutocomplete
-                placeholder="Location Name"
-                minLength={2}
-                autoFocus={false}
-                returnKeyType={"default"}
-                fetchDetails={true}
-                onPress={(data, details = null) => {
-                  console.log(data, details);
-
-                  setLocationName(details.formatted_address);
-                }}
-                query={{
-                  key: "AIzaSyA5omBLbqPM7a2zFE5r4B7TXQAgJ4Q14l4",
-                  language: "en",
-                }}
-                textInputProps={{
-                  placeholderTextColor: '#bbb',
-                  returnKeyType: "default"
-                }}
-                styles={{
-                  textInputContainer: {
-                    width: "98%",
-                    alignSelf: "center",
-                    marginBottom: 15,
-                    borderWidth: 1,
-                    borderColor: "#808080",
-                    borderRadius: 8,
-                    marginLeft: "-2%",
-                  },
-                  description: {
-                    fontWeight: "bold",
-                  },
-                  predefinedPlacesDescription: {
-                    color: "#1faadb",
-                  },
-                  poweredContainer: {
-                    display: "none",
-                  },
-                }}
-                currentLocation={false}
+            <TextInput
+                style={[styles.input, { width: "98%" }]}
+                placeholder="Event Location"
+                value={eventLocation}
+                onChangeText={(text) => setLocationName(text)}
+                editable={true}
+                placeholderTextColor={"#bbb"}
               />
             </View>
 
@@ -894,8 +862,8 @@ function MyCalendar() {
         } */}
           </View>
         }
-      </ScrollView>
     </View>
+    </ScrollView>
     </TouchableWithoutFeedback>
   );
 }
