@@ -9,6 +9,7 @@ import MyMap from './screens/MapScreen';
 import RenderOtherUserProfile from './components/RenderOtherUserProfile';
 import LocationDetailsPage from './screens/LocationDetailsPage';
 import ProfileScreen from './screens/ProfileScreen';
+import BudgetTracker from './screens/BudgetTracker';
 
 const Stack = createStackNavigator();
 
@@ -56,6 +57,11 @@ export default function App() {
           component={ProfileScreen}
           options={{headerShown: false}}
         />
+        <Stack.Screen
+          name="BudgetTracker"
+          component={BudgetTracker}
+          options={{headerShown: false}}
+        ></Stack.Screen>
       </Stack.Navigator>
     </NavigationContainer>
   );
