@@ -193,7 +193,7 @@ const SearchUsers = () => {
 
   const handleViewUserProfile = async () => {
     if (userUID) {
-      if (userUID && userName && bio && posts) {
+      if (userUID) {
         navigation.navigate('RenderOtherUserProfile', {
           userID: userUID,
           userName: userName,

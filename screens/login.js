@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { View, Text, TextInput, TouchableOpacity, StyleSheet, ImageBackground} from 'react-native';
+import { View, Text, TextInput, TouchableOpacity, StyleSheet, ImageBackground, Keyboard, TouchableWithoutFeedback} from 'react-native';
 import { auth } from '../firebase_config';
 import { signInWithEmailAndPassword } from 'firebase/auth';
 
@@ -36,6 +36,7 @@ export default function Login({ navigation }) {
       source={require('wanderwise-frontend/images/travel3.jpg')}
       style={styles.backgroundImage}
     >
+      <TouchableWithoutFeedback onPress={Keyboard.dismiss} accessible={false}>
       <View style={styles.container}>
         <Text style={styles.title}>Adventure Awaits</Text>
         <TextInput
@@ -68,6 +69,7 @@ export default function Login({ navigation }) {
           <Text style={styles.linkText}>Go to Main Page</Text>
         </TouchableOpacity>
       </View>
+      </TouchableWithoutFeedback>
     </ImageBackground>
   );
 }

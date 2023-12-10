@@ -12,6 +12,8 @@ import {
   RefreshControl,
   ActivityIndicator, 
   Alert,
+  TouchableWithoutFeedback, 
+  Keyboard,
 } from 'react-native';
 import { Calendar } from 'react-native-calendars';
 import Modal from 'react-native-modal';
@@ -422,6 +424,7 @@ function MyCalendar() {
   };
 
   return (
+    <TouchableWithoutFeedback onPress={Keyboard.dismiss} accessible={false}>
     <View style={styles.container}>
       <TouchableOpacity
         style={styles.backButton}
@@ -470,6 +473,7 @@ function MyCalendar() {
                 value={eventName}
                 onChangeText={(text) => setEventName(text)}
                 editable={true}
+                placeholderTextColor={"#bbb"}
               />
             </View>
 
@@ -488,6 +492,10 @@ function MyCalendar() {
                 query={{
                   key: "AIzaSyA5omBLbqPM7a2zFE5r4B7TXQAgJ4Q14l4",
                   language: "en",
+                }}
+                textInputProps={{
+                  placeholderTextColor: '#bbb',
+                  returnKeyType: "default"
                 }}
                 styles={{
                   textInputContainer: {
@@ -522,6 +530,7 @@ function MyCalendar() {
                 multiline={true}
                 numberOfLines={4}
                 editable={true}
+                placeholderTextColor={"#bbb"}
               />
             </View>
 
@@ -540,6 +549,7 @@ function MyCalendar() {
                   }
                   editable={true}
                   onChangeText={(text) => setEventTime(text)}
+                  placeholderTextColor={"#bbb"}
                 />
                 <TouchableOpacity onPress={showTimePicker}>
                   <FontAwesome5
@@ -570,6 +580,7 @@ function MyCalendar() {
                     }
                     editable={true}
                     onChangeText={(text) => setEndTime(text)}
+                    placeholderTextColor={"#bbb"}
                   />
                   <TouchableOpacity onPress={() => showEndTimePicker()}>
                     <FontAwesome5
@@ -885,6 +896,7 @@ function MyCalendar() {
         }
       </ScrollView>
     </View>
+    </TouchableWithoutFeedback>
   );
 }
 export default MyCalendar;

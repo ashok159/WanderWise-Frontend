@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import {View, Text, Button, StyleSheet, TouchableOpacity, Image,TextInput} from 'react-native';
+import {View, Text, TouchableWithoutFeedback, Keyboard, StyleSheet, TouchableOpacity, Image,TextInput} from 'react-native';
 import Icon from 'react-native-vector-icons/Ionicons'
 import ProgressBar from '../components/ProgressBar';
 import { Uploading } from '../components/Uploading';
@@ -169,6 +169,7 @@ const PostScreen = ({navigation}) => {
     }
 
     return (
+        <TouchableWithoutFeedback onPress={Keyboard.dismiss} accessible={false}>
         <View style={styles.container}>
             <View style={styles.imgBioContainer}>
                 <TextInput placeholder="What's on your mind?" onChangeText={setImageBio} value={imageBio} style={styles.bioInput}></TextInput>
@@ -287,6 +288,7 @@ const PostScreen = ({navigation}) => {
         </TouchableOpacity> */}
 
         </View>
+        </TouchableWithoutFeedback>
     );
 }
 

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { View, Text, TextInput, TouchableOpacity, StyleSheet, ImageBackground, Alert} from 'react-native';
+import { View, Text, TextInput, TouchableOpacity, StyleSheet, ImageBackground, Alert, TouchableWithoutFeedback, Keyboard} from 'react-native';
 import { createUserWithEmailAndPassword } from 'firebase/auth';
 import { doc, setDoc, getDoc } from 'firebase/firestore';
 import { db, auth } from '../firebase_config';
@@ -112,6 +112,7 @@ export default function Register({ navigation }) {
       source={require('wanderwise-frontend/images/travel5.jpg')}
       style={styles.backgroundImage}
     >
+      <TouchableWithoutFeedback onPress={Keyboard.dismiss} accessible={false}>
       <View style={styles.container}>
         <Text style={styles.title}>Create an Account</Text>
         <TextInput
@@ -156,6 +157,7 @@ export default function Register({ navigation }) {
           <Text style={styles.registerButtonText}>Register</Text>
         </TouchableOpacity>
       </View>
+      </TouchableWithoutFeedback>
     </ImageBackground>
   );
 }

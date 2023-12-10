@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { View, Text, StyleSheet, TextInput, SafeAreaView, Button, Platform, TouchableOpacity, Image, Alert} from 'react-native';
+import { View, Text, StyleSheet, TextInput, SafeAreaView, TouchableOpacity, Image, Alert, TouchableWithoutFeedback, Keyboard} from 'react-native';
 import { FontAwesome } from '@expo/vector-icons';
 import EventModal from '../components/EventModal';
 import EventComponent from '../components/EventComponent';
@@ -153,6 +153,7 @@ function BudgetTracker() {
 
 
     return (
+        <TouchableWithoutFeedback onPress={Keyboard.dismiss} accessible={false}>
         <SafeAreaView style={styles.container}>
         <View style={styles.header}>
             {/* Back Arrow */}
@@ -264,6 +265,7 @@ function BudgetTracker() {
 
             />
         </SafeAreaView>
+        </TouchableWithoutFeedback>
     );
 }
 

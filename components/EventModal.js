@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Modal, View, TextInput, Text, Button, TouchableOpacity, StyleSheet } from 'react-native';
+import { Modal, View, TextInput, Text, TouchableOpacity, StyleSheet, TouchableWithoutFeedback, Keyboard } from 'react-native';
 import { auth } from '../firebase_config';
 
 const EventModal = ({ visible, onClose, onSubmit }) => {
@@ -21,6 +21,7 @@ const EventModal = ({ visible, onClose, onSubmit }) => {
 
   return (
     <Modal visible={visible} animationType="slide" transparent>
+      <TouchableWithoutFeedback onPress={Keyboard.dismiss} accessible={false}>
       <View style={styles.modalContainer}>
         <View style={styles.modalContent}>
           <Text style={styles.modalTitle}>Add New Event</Text>
@@ -29,18 +30,21 @@ const EventModal = ({ visible, onClose, onSubmit }) => {
             value={eventName}
             onChangeText={setEventName}
             style={styles.input}
+            placeholderTextColor={"#bbb"}
           />
           <TextInput
             placeholder="Event Description"
             value={eventDescription}
             onChangeText={setEventDescription}
             style={styles.input}
+            placeholderTextColor={"#bbb"}
           />
           <TextInput
             placeholder="Event Location"
             value={eventLocation}
             onChangeText={setEventLocation}
             style={styles.input}
+            placeholderTextColor={"#bbb"}
           />
           <TextInput
             placeholder="Event Expense"
@@ -48,6 +52,7 @@ const EventModal = ({ visible, onClose, onSubmit }) => {
             onChangeText={setEventBudget}
             keyboardType="numeric"
             style={styles.input}
+            placeholderTextColor={"#bbb"}
           />
           <View style={styles.buttonContainer}>
             <TouchableOpacity onPress={onClose} style={styles.cancelButton}>
@@ -59,6 +64,7 @@ const EventModal = ({ visible, onClose, onSubmit }) => {
           </View>
         </View>
       </View>
+      </TouchableWithoutFeedback>
     </Modal>
   );
 };

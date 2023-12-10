@@ -11,6 +11,7 @@ import {
   Image,
   Modal,
   ScrollView,
+  TouchableWithoutFeedback, 
 } from "react-native";
 import MapView, { Marker } from "react-native-maps";
 import Geocoder from "react-native-geocoding";
@@ -520,6 +521,7 @@ const MyMap = ({ route }) => {
   };
 
   return (
+    <TouchableWithoutFeedback onPress={Keyboard.dismiss} accessible={false}>
     <SafeAreaView style={styles.container}>
       <View style={styles.searchContainer}>
         <GooglePlacesAutocomplete
@@ -651,6 +653,7 @@ const MyMap = ({ route }) => {
         />
       )}
     </SafeAreaView>
+    </TouchableWithoutFeedback>
   );
 };
 
