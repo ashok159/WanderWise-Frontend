@@ -1,11 +1,12 @@
 import React, { useLayoutEffect } from 'react';
-import { View, StyleSheet, ScrollView, SafeAreaView } from 'react-native';
+import { View, StyleSheet, ScrollView, SafeAreaView} from 'react-native';
 import { useFocusEffect } from '@react-navigation/native';
 import BudgetWidget from '../components/BudgetWidget';
 import EventsToday from '../components/EventsToday';
 import FlightStatus from './FlightStatus';
 import UserPost from '../components/UserPost';
 import OtherUserProfile from '../components/otherUserProfile';
+import { Platform } from 'react-native';
 
 const PlannerScreen = ({ navigation }) => {
   const [refreshKeyEvents, setRefreshKeyEvents] = React.useState(0);
@@ -36,6 +37,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#fff',
+    marginTop: Platform.OS === 'ios' ? 0 : 20,
   },
   scrollView: {
     flex: 1,
