@@ -1,7 +1,7 @@
 import React, { useLayoutEffect } from 'react';
 import { View, StyleSheet, ScrollView, SafeAreaView } from 'react-native';
 import { useFocusEffect } from '@react-navigation/native';
-// import BudgetWidget from '../components/BudgetWidget';
+import BudgetWidget from '../components/BudgetWidget';
 import EventsToday from '../components/EventsToday';
 // import FlightStatus from './FlightStatus';
 import UserPost from '../components/UserPost';
@@ -24,8 +24,8 @@ const PlannerScreen = ({ navigation }) => {
       <ScrollView style={styles.scrollView}>
         <View style={styles.contentContainer}>
           <EventsToday key={refreshKeyEvents} />
-          {/* <BudgetWidget key={refreshKeyBudget} />
-          <FlightStatus /> */}
+          <BudgetWidget key={refreshKeyBudget} />
+          {/* <FlightStatus /> */}
         </View>
       </ScrollView>
     </SafeAreaView>
