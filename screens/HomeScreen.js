@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react';
-import {View, Text, Button, StyleSheet, SafeAreaView, ScrollView, TouchableOpacity, FlatList, RefreshControl, Image} from 'react-native';
+import {View, Text, Button, StyleSheet, SafeAreaView, ScrollView, TouchableOpacity, FlatList, RefreshControl, Image, Platform} from 'react-native';
 import UserPost from '../components/UserPost.js';
 import {ref, uploadBytesResumable, getDownloadURL, FirebaseStorage} from 'firebase/storage';
 //reference bucket, helps us uplaod image - give info abt upload, give url to ref data 
@@ -312,6 +312,7 @@ const styles = StyleSheet.create({
       alignItems: 'center',
       paddingTop: 16,
       backgroundColor: '#fff',
+      marginTop:  Platform.OS === "ios" ? 0 : 20,
     },
     headerTitle: {
       fontSize: 27,

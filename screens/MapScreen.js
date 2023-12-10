@@ -667,6 +667,7 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     padding: 2,
     backgroundColor: "#f2f2f2",
+    marginTop: Platform.OS === "ios" ? 0 : 30,
   },
   categoryFilters: {
     flexDirection: "row",
