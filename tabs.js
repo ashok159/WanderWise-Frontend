@@ -5,6 +5,7 @@ import HomeScreen from './screens/HomeScreen';
 import Home from './screens/home';
 import PlannerScreen from './screens/PlannerScreen';
 import PostScreen from './screens/PostScreen';
+import ProfileScreen from './screens/ProfileScreen';
 
 const Tab = createBottomTabNavigator();
 
@@ -140,7 +141,7 @@ const Tabs = () =>{
                 </View>
             )
            }}></Tab.Screen>
-           <Tab.Screen name="Profile" component={ScreenFive} options={{
+           <Tab.Screen name="Profile" component={ProfileScreen} options={{
             headerShown: false,
             tabBarIcon: ({focused}) => (
                 <View style={{

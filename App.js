@@ -8,6 +8,7 @@ import MainPage from './mainpage';
 import MyMap from './screens/MapScreen';
 import RenderOtherUserProfile from './components/RenderOtherUserProfile';
 import LocationDetailsPage from './screens/LocationDetailsPage';
+import ProfileScreen from './screens/ProfileScreen';
 
 const Stack = createStackNavigator();
 
@@ -49,6 +50,11 @@ export default function App() {
         name="LocationDetails" 
         component={LocationDetailsPage} 
         options={{ headerShown: false }}
+        />
+        <Stack.Screen
+          name = "ProfileScreen"
+          component={ProfileScreen}
+          options={{headerShown: false}}
         />
       </Stack.Navigator>
     </NavigationContainer>
