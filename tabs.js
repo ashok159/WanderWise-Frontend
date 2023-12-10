@@ -4,6 +4,7 @@ import MyMap from './screens/MapScreen';
 import HomeScreen from './screens/HomeScreen';
 import Home from './screens/home';
 import PlannerScreen from './screens/PlannerScreen';
+import PostScreen from './screens/PostScreen';
 
 const Tab = createBottomTabNavigator();
 
@@ -97,7 +98,7 @@ const Tabs = () =>{
                 </View>
             )
            }}></Tab.Screen>
-           <Tab.Screen name="Post" component={ScreenThree} options={{
+           <Tab.Screen name="Post" component={PostScreen} options={{
             headerShown: false,
             tabBarIcon: ({focused}) => (
                 <View style={{
