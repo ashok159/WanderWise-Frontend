@@ -3,6 +3,7 @@ import { StyleSheet, Text, View, Image, TouchableOpacity } from 'react-native';
 import MyMap from './screens/MapScreen';
 import HomeScreen from './screens/HomeScreen';
 import Home from './screens/home';
+import PlannerScreen from './screens/PlannerScreen';
 
 const Tab = createBottomTabNavigator();
 
@@ -117,7 +118,7 @@ const Tabs = () =>{
                 </View>
             )
            }}></Tab.Screen>
-            <Tab.Screen name="Planner" component={ScreenFour} options={{
+            <Tab.Screen name="Planner" component={PlannerScreen} options={{
             headerShown: false,
             tabBarIcon: ({focused}) => (
                 <View style={{
