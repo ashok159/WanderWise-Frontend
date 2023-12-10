@@ -12,6 +12,7 @@ import ProfileScreen from './screens/ProfileScreen';
 import BudgetTracker from './screens/BudgetTracker';
 import FlightStatus from './screens/FlightStatus';
 import FlightDetails from './screens/FlightDetails';
+import MyCalendar from './components/Calendar';
 
 const Stack = createStackNavigator();
 
@@ -73,6 +74,11 @@ export default function App() {
           name = "FlightStatus"
           component={FlightStatus}
           options={{headerShown: false}}
+        />
+        <Stack.Screen
+          name="MyCalendar"
+          component={MyCalendar}
+          options={{ headerShown: false }} 
         />
       </Stack.Navigator>
     </NavigationContainer>
