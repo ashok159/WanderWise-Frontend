@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react';
-import {View, Text, Button, StyleSheet, Image, SafeAreaView, ScrollView, TouchableOpacity, FlatList, TextInput, RefreshControl, Modal} from 'react-native';
+import {View, Text, Button, StyleSheet, Image, SafeAreaView, ScrollView, TouchableOpacity, FlatList, TextInput, RefreshControl, Modal, Platform} from 'react-native';
 import UserPost from '../components/UserPost';
 import {ref, uploadBytesResumable, getDownloadURL, FirebaseStorage} from 'firebase/storage';
 //reference bucket, helps us uplaod image - give info abt upload, give url to ref data 
@@ -508,6 +508,8 @@ const styles = StyleSheet.create({
         shadowRadius: 2,
       },
     }),
+    marginTop: Platform.OS === "ios" ? 0 : 20,
+    marginRight: Platform.OS === "ios" ? 0 : 5,
   },
   userImage:{
       height: 150,
