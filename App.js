@@ -10,6 +10,8 @@ import RenderOtherUserProfile from './components/RenderOtherUserProfile';
 import LocationDetailsPage from './screens/LocationDetailsPage';
 import ProfileScreen from './screens/ProfileScreen';
 import BudgetTracker from './screens/BudgetTracker';
+import FlightStatus from './screens/FlightStatus';
+import FlightDetails from './screens/FlightDetails';
 
 const Stack = createStackNavigator();
 
@@ -62,6 +64,16 @@ export default function App() {
           component={BudgetTracker}
           options={{headerShown: false}}
         ></Stack.Screen>
+        <Stack.Screen
+          name = "FlightDetails"
+          component={FlightDetails}
+          options={{headerShown: false}}
+        />
+        <Stack.Screen
+          name = "FlightStatus"
+          component={FlightStatus}
+          options={{headerShown: false}}
+        />
       </Stack.Navigator>
     </NavigationContainer>
   );
