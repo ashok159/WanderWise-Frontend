@@ -65,9 +65,9 @@ export default function Login({ navigation }) {
         <TouchableOpacity onPress={handleRegister} style={styles.registerButton}>
           <Text style={styles.registerButtonText}>Sign Up</Text>
         </TouchableOpacity>
-        <TouchableOpacity onPress={handleGoToMainPage}>
+        {/* <TouchableOpacity onPress={handleGoToMainPage}>
           <Text style={styles.linkText}>Go to Main Page</Text>
-        </TouchableOpacity>
+        </TouchableOpacity> */}
       </View>
       </TouchableWithoutFeedback>
     </ImageBackground>

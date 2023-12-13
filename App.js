@@ -13,10 +13,12 @@ import BudgetTracker from './screens/BudgetTracker';
 import FlightStatus from './screens/FlightStatus';
 import FlightDetails from './screens/FlightDetails';
 import MyCalendar from './components/Calendar';
+import { LogBox } from 'react-native';
 
 const Stack = createStackNavigator();
 
 export default function App() {
+  LogBox.ignoreAllLogs(true);
   return (
     <NavigationContainer>
       <Stack.Navigator initialRouteName="Home">
